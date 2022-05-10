@@ -1,7 +1,22 @@
 ﻿@page "/"
+@inject NavigationManager NavManager
+<h1>Ultimate Tic Tac Toe</h1>
 
-<h1>Hello, world!</h1>
+Welcome to our ultimate tic tac toe, the most ultimate tic tac toe around
+<p>Choose Gamemode</p>
+<button class="btn btn-primary" @onclick="PassnPlay">Pass n Play</button>
+<button class="btn btn-primary" @onclick="LocalPlay">Local Play</button>
 
-Welcome to your new app.
+@code{
+    public void PassnPlay()
+    {
+        NavManager.NavigateTo("/passnplay");
+    }
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    public void LocalPlay()
+    {
+        NavManager.NavigateTo("/localrooms");
+    }
+}
+
+<SurveyPrompt Title="How is our game working for you?" />

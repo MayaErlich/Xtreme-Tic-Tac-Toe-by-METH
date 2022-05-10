@@ -11,6 +11,11 @@ using Microsoft.Extensions.Logging;
 namespace Xtreme_Tic_Tac_Toe_by_METH
 {
     public class Program
+
+        //entire game is called board
+        //9 parent tiles that each contain 9 childs tiles within
+        //each child tile will have a value to represent x/o/unselected
+
     {
         public static async Task Main(string[] args)
         {
