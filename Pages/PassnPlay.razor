@@ -1,7 +1,52 @@
 ﻿@page "/passnplay"
 
-<h3>Pass n Play</h3>
+
+
+<EditForm Model="@model">
+    <label>Player One: </label>
+    <div>
+        <InputText id="Player1" class="form-control"
+                   @bind-Value="model.Player1" />
+    </div>
+    <br />
+    <label>Player Two: </label>
+    <div>
+        <InputText id="Player2" class="form-control"
+                   @bind-Value="model.Player2" />
+    </div>
+    <!--
+    <h1>Pass n Play</h1>
+    <hr />
+    <div class="form-group row">
+        <label for="Player1" class="col-form-label">
+            Player One
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Player1" class="form-control"
+                       @bind-Value="model.Player1" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Player2" class="col-form-label">
+            Player Two
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Player2" class="form-control"
+                       @bind-Value="model.Player2" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <button type="submit">Submit</button>
+    </div>
+        -->
+</EditForm>
 
 @code {
 
+    Model model = new Model();
+    public class Model {
+        public String Player1 { get; set; }
+        public String Player2 { get; set; }
+    }
 }
