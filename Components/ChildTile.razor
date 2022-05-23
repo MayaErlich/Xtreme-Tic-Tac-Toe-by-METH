@@ -1,0 +1,13 @@
+﻿
+<button class="btn btn-primary" @onclick="Click">@TileNum</button>
+
+@code {
+    [Parameter]
+    public Action<int> Clicked { get; set; }
+    [Parameter]
+    public int TileNum { get; set; }
+    public void Click()
+    {
+        Clicked(TileNum);
+    }
+}
