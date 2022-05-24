@@ -4,17 +4,17 @@
             <th> <ChildTile Clicked="@ChildClicked" TileNum="1"> </ChildTile> </th>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="2"> </ChildTile> </th>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="3"> </ChildTile> </th>
-        </tr>
-        <tr>
+            <span>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="4"> </ChildTile> </th>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="5"> </ChildTile> </th>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="6"> </ChildTile> </th>
-        </tr>
-        <tr>
+            <span>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="7"> </ChildTile> </th>
             <th> <ChildTile Clicked="@ChildClicked" TileNum="8"> </ChildTile> </th>
-            <th> <ChildTile Clicked="@ChildClicked" TileNum="9"> </ChildTile> </th>
+            <th> <ChildTile Clicked="@ChildClicked" TileNum="9"> </ChildTile> </th>                 
+                
         </tr>
+    
     </tbody>*@
 <div class="parentTile">
     <div style="grid-column : 1; grid-row : 1; "><ChildTile Clicked="@ChildClicked" TileNum="1"> </ChildTile></div>
@@ -30,7 +30,6 @@
     <div style="grid-column : 3; grid-row : 3; "><ChildTile Clicked="@ChildClicked" TileNum="1"> </ChildTile></div>
 </div>
 
-//use <span> to seperate items on same line, could work to make 9 individual tiles? 
 
 
 @code {
