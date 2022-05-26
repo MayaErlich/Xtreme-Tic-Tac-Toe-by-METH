@@ -120,27 +120,6 @@ app {
     display : grid;
 }
 
-#container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-}
-
-#leftThing {
-    width: 25%;
-   
-}
-
-#content {
-    width: 50%;
- 
-}
-
-#rightThing {
-    width: 25%;
-
-}
-
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -204,4 +183,5 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+}
 }
