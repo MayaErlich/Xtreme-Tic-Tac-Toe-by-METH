@@ -1,5 +1,4 @@
-﻿
-    
+﻿@using Game;
 <style>
     .parentTile {
         display: grid;
@@ -22,8 +21,11 @@
 
 
 @code {
+    Game game { get; set; } = new Game();
+    State currentPlayer;
     public void ChildClicked(int tileNum)
     {
-        Console.WriteLine(tileNum);
+        this.game.Tiles[tileNum] = currentPlayer;
     }
+
 }
