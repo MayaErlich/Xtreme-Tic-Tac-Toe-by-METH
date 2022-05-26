@@ -7,25 +7,21 @@
 </style>
 
 <div class="parentTile">
-    <div><ChildTile Clicked="@ChildClicked" TileNum="0"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="1"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="2"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="3"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="4"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="5"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="6"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="7"> </ChildTile></div>
-    <div><ChildTile Clicked="@ChildClicked" TileNum="8"> </ChildTile></div>
+    @for (int i = 0; i < 9; i++)
+    {
+        <ChildTile Clicked="@ChildClicked" TileNum="i"> </ChildTile>
+    }
 </div>
     
 
 
 @code {
+    [Parameter]
+    public Func<int, State> Clicked { get; set; }
     Game game { get; set; } = new Game();
-    State currentPlayer;
     public void ChildClicked(int tileNum)
     {
-        this.game.Tiles[tileNum] = currentPlayer;
+        this.game.Tiles[tileNum] = Clicked(tileNum);
     }
 
 }

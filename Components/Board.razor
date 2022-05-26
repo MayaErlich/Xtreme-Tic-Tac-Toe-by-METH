@@ -1,4 +1,4 @@
-﻿
+﻿@using Game;
 <style>
     .board {
         display: grid;
@@ -8,22 +8,27 @@
     }
 </style>
 <div class="board">
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
-
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
-
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
-    <ParentTile></ParentTile>
+    @for (int i = 0; i < 9; i++)
+    {
+        <ParentTile Clicked="ParentClicked"></ParentTile>
+    }
 </div>
 
 
 
 
 @code {
+    private State _currentPlayer = State.X;
+    Game game { get; set; } = new Game();
+    public State ParentClicked(int tileNum)
+    {
+        if (_currentPlayer == State.X)
+        {
+            _currentPlayer = State.O;
+            return State.X;
+        }
+        _currentPlayer = State.X;
+        return State.O;
+    }
 
 }
