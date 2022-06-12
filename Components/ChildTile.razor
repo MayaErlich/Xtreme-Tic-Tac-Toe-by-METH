@@ -1,5 +1,24 @@
 ﻿@using Game;
-<button class="btn btn-primary" @onclick="Click">@TileNum</button>
+<style>
+    .block {
+        display: flex;
+        width: 35px;
+        height: 35px;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: bold;
+        border: 3px solid black;
+        transition: background 0.2s ease-in-out;
+    }
+
+    .block:hover {
+        cursor: pointer;
+        background: #FF0000;
+    }
+
+</style>
+<div class="block" @onclick="Click"></div>
 
 @code {
     [Parameter]
