@@ -20,9 +20,11 @@
     [Parameter]
     public Func<int, State> Clicked { get; set; }
     Game game { get; set; } = new Game();
-    public void ChildClicked(int tileNum)
+    public State ChildClicked(int tileNum)
     {
-        this.game.Tiles[tileNum] = Clicked(tileNum);
+        State currentPlayer = Clicked(tileNum);
+        this.game.Tiles[tileNum] = currentPlayer;
+        return currentPlayer;
     }
 
 }

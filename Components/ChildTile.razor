@@ -10,6 +10,7 @@
         font-weight: bold;
         border: 3px solid black;
         transition: background 0.2s ease-in-out;
+       
     }
 
     .block:hover {
@@ -18,15 +19,32 @@
     }
 
 </style>
-<div class="block" @onclick="Click"></div>
+<div class="block" @onclick="Click">
+    <img src="@ImageSrc"/>
+</div>
 
 @code {
+    /// <summary>
+    /// The designated method to run once a tile is clicked, provided by ParentTile
+    /// </summary>
     [Parameter]
-    public Action<int> Clicked { get; set; }
+    public Func<int, State> Clicked { get; set; }
+    /// <summary>
+    /// Which tile this is supposed to represent, provided by ParentTile
+    /// </summary>
     [Parameter]
     public int TileNum { get; set; }
+    public string ImageSrc { get; set; } = "";
     public void Click()
     {
-        Clicked(TileNum);
+        State currentPlayer = Clicked(TileNum);
+        if (currentPlayer == State.X)
+        {
+            ImageSrc = "/Images/xstate.PNG";
+        }
+        else if(currentPlayer == State.O)
+        {
+            ImageSrc = "/Images/ostate.PNG";
+        }
     }
 }
